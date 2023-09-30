@@ -1,8 +1,9 @@
 ﻿const int NUMS_LENGTH = 2;
 int MIN_NUM = (int) Math.Pow(10, NUMS_LENGTH - 1);
+int NUMS_NUM = 9 * MIN_NUM;
 
 int[,,] GenUniqueArray(int size) {
-    int[] list = new int[9 * MIN_NUM];
+    int[] list = new int[NUMS_NUM];
     for (int i = 0; i < list.Length; i++) {
         list[i] = MIN_NUM + i;
     }
@@ -39,7 +40,7 @@ void PrintArray(int[,,] array) {
     }
 }
 
-Console.Write("Введите желаемый размер массива (1 число, не больше 4) ");
+Console.Write($"Введите желаемый размер массива (1 число, не больше {(int)Math.Pow(NUMS_NUM, 1.0 / 3)}) ");
 int[,,] array = GenUniqueArray(int.Parse(Console.ReadLine()));
 
 Console.WriteLine("Сгенерированный массив:");
